@@ -1,0 +1,670 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  --primary: 0 84% 60%; /* Patriot Red */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 217 91% 60%; /* Patriot Blue */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 0 84% 60%; /* Patriot Red */
+
+  --radius: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improve all transitions site-wide */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.dark {
+  --background: 217 91% 15%; /* Dark Blue Background */
+  --foreground: 210 40% 98%;
+
+  --card: 217 91% 15%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 217 91% 15%;
+  --popover-foreground: 210 40% 98%;
+
+  --primary: 0 84% 60%; /* Patriot Red */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 217 91% 60%; /* Patriot Blue */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 0 84% 60%; /* Patriot Red */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-montserrat);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+}
+
+/* DARALBINNA Patriotic Button Styles */
+.btn-primary {
+  @apply bg-patriot-red-600 text-white hover:bg-patriot-red-700 font-medium transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply bg-patriot-blue-600 text-white hover:bg-patriot-blue-700 font-medium transition-all duration-300;
+}
+
+.btn-outline {
+  @apply border-2 border-patriot-red-600 text-patriot-red-600 hover:bg-patriot-red-600 hover:text-white font-medium transition-all duration-300;
+}
+
+.btn-dark {
+  @apply bg-patriot-blue-900 text-white hover:bg-patriot-blue-800 font-medium transition-all duration-300;
+}
+
+.btn-light {
+  @apply bg-patriot-white-50 text-patriot-blue-900 hover:bg-patriot-white-100 font-medium transition-all duration-300;
+}
+
+/* Ensure proper contrast for all button variants */
+.bg-patriot-red-600,
+.bg-patriot-red-700,
+.bg-patriot-blue-600,
+.bg-patriot-blue-700,
+.bg-patriot-blue-900 {
+  @apply text-white;
+}
+
+.bg-patriot-white-50,
+.bg-patriot-white-100 {
+  @apply text-patriot-blue-900;
+}
+
+/* Ensure proper contrast for outline buttons */
+.border-patriot-red-600.bg-transparent {
+  @apply text-patriot-red-600 dark:text-patriot-red-400;
+}
+
+.border-patriot-red-600.bg-transparent:hover {
+  @apply text-white;
+}
+
+.border-white.bg-transparent {
+  @apply text-white;
+}
+
+.border-white.bg-transparent:hover {
+  @apply text-patriot-blue-900;
+}
+
+/* Mobile-first responsive typography */
+h1 {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold;
+}
+
+h2 {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold;
+}
+
+h3 {
+  @apply text-lg sm:text-xl md:text-2xl font-bold;
+}
+
+p,
+li,
+a {
+  @apply text-base leading-relaxed;
+}
+
+/* Responsive spacing */
+section {
+  @apply py-8 sm:py-12 md:py-16 lg:py-20;
+}
+
+.container {
+  @apply px-4 sm:px-6 lg:px-8 mx-auto w-full max-w-7xl;
+}
+
+/* Responsive grid layouts */
+.responsive-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+}
+
+.responsive-grid-2 {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12;
+}
+
+/* Navbar specific styles */
+.navbar-link {
+  @apply text-base font-medium transition-colors inline-flex items-center;
+}
+
+/* Mobile-friendly interactive elements */
+.mobile-touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button,
+a,
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+button:not(.inline),
+[role="button"]:not(.inline),
+a.btn,
+a.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  min-height: 44px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+button[size="icon"] {
+  min-height: 44px;
+  min-width: 44px;
+  box-sizing: content-box;
+}
+
+/* Responsive images */
+.responsive-image {
+  @apply w-full h-auto object-cover;
+}
+
+.responsive-image-container {
+  @apply relative w-full overflow-hidden rounded-lg;
+  aspect-ratio: 16 / 9;
+}
+
+/* Ensure high contrast for all text */
+.text-gray-600 {
+  @apply dark:text-gray-300;
+}
+
+.text-gray-700 {
+  @apply dark:text-gray-200;
+}
+
+.text-gray-800 {
+  @apply dark:text-gray-100;
+}
+
+.text-gray-900 {
+  @apply dark:text-white;
+}
+
+/* Ensure form elements have proper contrast */
+input,
+select,
+textarea {
+  @apply text-gray-900 dark:text-white bg-white dark:bg-gray-800;
+  font-size: 1rem;
+  min-height: 44px;
+}
+
+/* DARALBINNA patriotic theme colors */
+.theme-text {
+  @apply text-patriot-red-600 dark:text-patriot-red-400;
+}
+
+.theme-bg {
+  @apply bg-patriot-red-600 dark:bg-patriot-red-700;
+}
+
+.theme-border {
+  @apply border-patriot-red-600 dark:border-patriot-red-400;
+}
+
+.theme-hover {
+  @apply hover:bg-patriot-red-700 dark:hover:bg-patriot-red-600;
+}
+
+/* Patriotic gradient backgrounds */
+.patriotic-gradient {
+  background: linear-gradient(135deg, #dc2626 0%, #ffffff 50%, #2563eb 100%);
+}
+
+.patriotic-gradient-subtle {
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.1) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(37, 99, 235, 0.1) 100%
+  );
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  .mobile-text-center {
+    text-align: center;
+  }
+
+  .mobile-text-left {
+    text-align: left;
+  }
+
+  .mobile-py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .mobile-px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .mobile-my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .mobile-stack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .mobile-text-sm {
+    font-size: 0.875rem;
+  }
+
+  .mobile-text-base {
+    font-size: 1rem;
+  }
+
+  .mobile-text-lg {
+    font-size: 1.125rem;
+  }
+
+  .mobile-tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+
+  .mobile-img-sm {
+    height: 200px;
+  }
+
+  .mobile-img-md {
+    height: 300px;
+  }
+
+  .mobile-img-lg {
+    height: 400px;
+  }
+
+  p,
+  li {
+    @apply leading-relaxed;
+  }
+
+  .flex-col > a,
+  .flex-col > button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section > div > div {
+    text-align: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fix for fixed position elements on iOS */
+.fixed,
+.sticky {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Animation utilities */
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out forwards;
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.5s ease-out forwards;
+  }
+
+  .animate-slide-left {
+    animation: slide-left 0.5s ease-out forwards;
+  }
+
+  .animate-slide-right {
+    animation: slide-right 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out forwards;
+  }
+
+  .animate-bounce-in {
+    animation: bounce-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .animate-delay-700 {
+    animation-delay: 700ms;
+  }
+
+  .animate-delay-1000 {
+    animation-delay: 1000ms;
+  }
+
+  .transition-transform-opacity {
+    transition-property: transform, opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+
+  .hover-scale {
+    @apply transition-all duration-300;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-bright {
+    @apply transition-all duration-300;
+  }
+
+  .hover-bright:hover {
+    filter: brightness(1.1);
+  }
+}
+
+/* Keyframes for animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* Fix for navbar and slider spacing */
+.navbar + * {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Ensure images fill their containers properly */
+.relative > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Fix for potential flexbox spacing issues */
+.flex {
+  min-height: 0;
+}
+
+/* Ensure no unwanted margins on image containers */
+[role="region"][aria-roledescription="carousel"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+/* Fix for potential gap between navbar and content */
+header + main {
+  margin-top: 0;
+}
+
+/* Mobile navbar improvements */
+@media (max-width: 768px) {
+  .mobile-nav-item {
+    padding: 12px 16px;
+    margin-bottom: 8px;
+  }
+
+  [role="dialog"] {
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  }
+
+  header {
+    visibility: visible !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Remove any border from navbar */
+header {
+  border-bottom: none !important;
+}
+
+/* Ensure navbar is always visible at top of page */
+header[style*="transform: translateY(0%)"],
+header[style*="opacity: 1"] {
+  border-bottom: none !important;
+}
