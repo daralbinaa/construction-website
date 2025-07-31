@@ -164,14 +164,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 />
 
                 <MobileNavItem
-                  href="/about"
-                  label="About Us"
-                  isActive={pathname === "/about"}
-                  onClick={onClose}
-                  delay={0.4}
-                />
-
-                <MobileNavItem
                   href="/contact"
                   label="Contact"
                   isActive={pathname === "/contact"}

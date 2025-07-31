@@ -123,25 +123,8 @@ export function Navbar() {
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="bg-patriot-red-600 text-white p-1.5 sm:p-2 rounded-lg"
                 >
-                  <Image
-                    src="/DABLOGO.png"
-                    alt="DARALBINNA Official Logo"
-                    width={28}
-                    height={28}
-                    className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7"
-                  />
+                  <span className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-none">DARALBINNA</span>
                 </motion.div>
-                <div className="flex flex-col">
-                  <motion.span
-                    className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 leading-none"
-                    initial={{ opacity: 1 }}
-                    whileHover={{ scale: 1.03, color: "#DC2626" }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="inline xs:hidden">DARALBINAA</span>
-                    <span className="hidden xs:inline">DARALBINAA</span>
-                  </motion.span>
-                </div>
               </Link>
             </div>
 
