@@ -121,9 +121,15 @@ export function Navbar() {
                 <motion.div
                   whileHover={{ rotate: 15, scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  className="bg-patriot-red-600 text-white p-1.5 sm:p-2 rounded-lg"
+                  className="flex items-center"
                 >
-                  <span className="text-lg sm:text-xl md:text-2xl font-bold text-white leading-none">DARALBINNA</span>
+                  <Image
+                    src="/Fulllogo.png"
+                    alt="DARALBINNA Official Logo"
+                    width={320}
+                    height={120}
+                    className="h-20 w-auto sm:h-28 md:h-36 lg:h-40 xl:h-48 2xl:h-56 max-w-[400px] object-contain transition-all duration-300 mt-4 sm:mt-6 md:mt-8"
+                  />
                 </motion.div>
               </Link>
             </div>

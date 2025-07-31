@@ -15,8 +15,7 @@ export function Footer() {
               <span className="text-xl font-bold text-white">DARALBINNA</span>
             </Link>
             <p className="text-gray-300 mb-6 text-sm sm:text-base">
-              Your trusted partner for innovative construction solutions in Ajman. Building excellence and delivering
-              quality since 2000. <span className="text-patriot-red-400 font-semibold">Officially licensed in Ajman.</span>
+              Delivering quality since 2025
             </p>
             <div className="flex space-x-4 justify-center sm:justify-start">
               <Link href="#" className="text-gray-300 hover:text-patriot-red-600 transition-colors">
@@ -48,7 +47,7 @@ export function Footer() {
               </li>
               <li className="flex items-start justify-center sm:justify-start">
                 <Phone className="h-5 w-5 text-patriot-red-600 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-gray-300 text-sm sm:text-base">+971 565861839</span>
+                <span className="text-gray-300 text-sm sm:text-base">+971 566598069</span>
               </li>
               <li className="flex items-start justify-center sm:justify-start">
                 <Mail className="h-5 w-5 text-patriot-red-600 mr-3 mt-1 flex-shrink-0" />
