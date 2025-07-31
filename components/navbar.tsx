@@ -6,8 +6,9 @@ import type { Variants } from "framer-motion"
 import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Building2, ChevronDown, Menu } from "lucide-react"
+import { ChevronDown, Menu } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 import { AnimatedButton } from "@/components/ui/animated-button"
@@ -122,7 +123,13 @@ export function Navbar() {
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   className="bg-patriot-red-600 text-white p-1.5 sm:p-2 rounded-lg"
                 >
-                  <Building2 className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7" />
+                  <Image
+                    src="/DABLOGO.png"
+                    alt="DARALBINNA Official Logo"
+                    width={28}
+                    height={28}
+                    className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7"
+                  />
                 </motion.div>
                 <div className="flex flex-col">
                   <motion.span
@@ -131,8 +138,8 @@ export function Navbar() {
                     whileHover={{ scale: 1.03, color: "#DC2626" }}
                     transition={{ duration: 0.2 }}
                   >
-                    <span className="inline xs:hidden">DARALBINNA</span>
-                    <span className="hidden xs:inline">DARALBINNA</span>
+                    <span className="inline xs:hidden">DARALBINAA</span>
+                    <span className="hidden xs:inline">DARALBINAA</span>
                   </motion.span>
                 </div>
               </Link>
